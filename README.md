@@ -6,7 +6,8 @@ Python program that displays course details using user input validation and form
 - Displays course information in a neatly formatted box
 - Provides helpful error messages when an invalid course number is entered
 - Handles input in case-insensitive manner
-- Includes detailed documentation and basic unit testing  
+- Includes detailed documentation and unit testing
+- Automatically tested using GitHub Actions
 
 ## ▶ How To Run 
 - Ensure Python 3 is installed
@@ -26,13 +27,14 @@ This program currently supports the following courses:
 
 ## 🧪 Testing 
 - Unit tests are included in the test_SidesC_CourseInfo.py file
-- Tests are automatically discovered and executed when using unittest or tools like pytest
+- Tests are automatically discovered and executed when using Python's unittest framework
+- Tests also run automatically on every push and pull request using GitHub Actions
 
 ## 👩🏻‍💻 Author
 Cayleigh Sides 
 
 ## 📓 Notes 
-Main program was created to meet the requirements of a course assignment. Unit tests were added afterward to demonstrate testability and good coding practices. 
+Main program was created to meet the requirements of a course assignment. Unit tests and GitHub Actions were added afterward to demonstrate testability and good coding practices. 
 
 ---
 
