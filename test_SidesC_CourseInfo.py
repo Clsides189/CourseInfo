@@ -13,13 +13,14 @@ class TestCourseInfo(unittest.TestCase):
 
     def test_remove_extra_removes_punctuation(self):
         
-        # remove_extra should strip all non-alphanumeric characters from input
+        # Tests that remove_extra strips all non-alphanumeric characters from input
         self.assertEqual(remove_extra("CS101!@#"), "CS101")
         self.assertEqual(remove_extra("NT110..."), "NT110")
         self.assertEqual(remove_extra("CM241-?"), "CM241")
         self.assertEqual(remove_extra("CS102"), "CS102")    # valid input unchanged
         self.assertEqual(remove_extra("abc123"), "abc123")  # letters and digits stay
 
+    # Tests the captured printed output and verifies correct formatting 
     def test_info_valid_course_prints_boxed_info(self):
         
         # Setup dictionaries with one course entry 
@@ -48,20 +49,27 @@ class TestCourseInfo(unittest.TestCase):
         self.assertIn("Meeting Time: 8:00 AM", output)
         self.assertIn("+------------------------+", output)  # Check box border present
 
+    # Tests error message with invalid course input
     def test_info_invalid_course_prints_error(self):
 
-        # Check error message for an invalid course input
+        # Setup dictionaries with invalid course entry 
         room = {}
         instructor = {}
         time = {}
 
+        # Create StringIO object to capture output
         captured_output = io.StringIO()
+
+        # Redirect stdout
         sys.stdout = captured_output
 
+        # Call the function with an invalid course
         info("INVALID", room, instructor, time)
 
+        # Reset redirect
         sys.stdout = sys.__stdout__
 
+        # Check for expected error message 
         output = captured_output.getvalue()
         self.assertIn("ERROR", output)
         self.assertIn("PLEASE ENTER ONE AVAILABLE COURSE NUMBER OR 'EXIT'", output)
