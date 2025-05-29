@@ -1,6 +1,5 @@
-# Chapter 9 Programming Challenge 1
 # Cayleigh Sides
-# CSC 221-01IN
+# Made for course CSC 221 Ch.9 
 # This program will let a user enter a course number or 'EXIT' to quit program
 # It will display the user's entered course number information in a box
 # Course number information: room number, instructor name, and meeting time
